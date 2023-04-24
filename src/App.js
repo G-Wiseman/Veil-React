@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { Link } from 'react-router-dom';
+import AppRoutes from './AppRoutes';
+
 
 function App() {
   return (
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        The Broken Veil 
+        <div className='LinkBar'>
+          <Link className='Links' to="/">Home Page</Link>
+          <Link className='Links' to="/profilepage">Profile</Link>
+          <Link className='Links' to="/partyselect"> Party Select</Link>
+          <Link className='Links' to="/partypage"> Party Page</Link>
+        </div>
       </header>
+     
+      <AppRoutes></AppRoutes>
     </div>
   );
 }

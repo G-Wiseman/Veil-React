@@ -1,0 +1,29 @@
+.CharacterCard {
+    text-align: center;
+    background-color: rgb(46, 29, 8);
+    max-height: 100em;
+    max-width: 20em;
+    margin: 2em 2em;
+    vertical-align: center;
+    width: 30rem;
+  }
+  
+.Title {
+    text-transform: capitalize;
+    color: cornsilk;
+  }
+  
+.BodyCard{
+    background-color: rgb(97, 59, 59);
+    padding:0.5rem;
+
+}
+
+.StatLine{
+  margin:0.5rem 0.5rem;
+  padding: 0.5rem;
+  border:olive;
+  border-width: 5px;
+  background-color: rgb(136, 119, 95);
+    
+}
