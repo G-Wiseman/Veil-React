@@ -10,7 +10,7 @@ export default function PartyHomePage({partyID}) {
         <header>{partyID}</header>
         <div className="CharacterLineup">
             {characterIDs.map((characterID) => (
-                <CharacterCard characterID={characterID}></CharacterCard>
+                <CharacterCard key={characterID} characterID={characterID}></CharacterCard>
             ))}
         </div>
         </div>
