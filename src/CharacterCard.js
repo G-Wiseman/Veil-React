@@ -1,6 +1,22 @@
 import "./CharacterCard.css"
 
 
+function StatLine({StatType}){
+  return(
+  <div className="StatLine">
+    <div className="StatType">{StatType}</div>
+    <div className="StatLineButtons"> 
+      <button className="IncrementButton"> +1</button>
+      <button className="IncrementButton" > +5</button>
+      <button className="IncrementButton"> +20</button>
+      <button> - </button>
+    </div>
+    <div className="StatLineValue">{100}</div>
+  </div>
+  )
+
+}
+
 export default function CharacterCard({characterID}) {
 
   // Do work here to retrieve the Data associated with this Character from the API.
@@ -11,37 +27,20 @@ export default function CharacterCard({characterID}) {
 
         <body className="BodyCard">
 
-            <div className="StatLine">
-              Kills
-            </div>
+          <StatLine StatType={"Kills"}></StatLine>
 
-            <div className="StatLine">
-              Times Unconcious
-            </div>
+            <StatLine StatType={"Unconscious"}></StatLine>
 
-            <div className="StatLine">
-              Deaths
-            </div>
+            <StatLine StatType={"Deaths"}></StatLine>
 
-            <div className="StatLine">
-              Nat 20s
-            </div>
+            
+          <StatLine StatType={"Nat20s"}></StatLine>
+        
+          <StatLine StatType={"Nat1s"}></StatLine>
 
-            <div className="StatLine">
-              Nat 1s
-            </div>
-
-            <div className="StatLine">
-              Healing Done
-            </div>
-
-            <div className="StatLine">
-              Damage Done
-            </div>
-
-            <div className="StatLine">
-              Final Blows
-            </div>
+          <StatLine StatType={"Healing"}></StatLine>
+          <StatLine StatType={"Damage"}></StatLine>
+          <StatLine StatType={"Final Blows"}></StatLine>
 
         </body>
     </div>

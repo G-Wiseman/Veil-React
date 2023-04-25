@@ -1,29 +1,51 @@
 .CharacterCard {
+    margin: 1rem;
     text-align: center;
     background-color: rgb(46, 29, 8);
-    max-height: 100em;
-    max-width: 20em;
+    height: 20em;
     margin: 2em 2em;
     vertical-align: center;
-    width: 30rem;
+    width: 75%;
   }
   
 .Title {
     text-transform: capitalize;
     color: cornsilk;
+    font-size: calc(1.6rem);
   }
   
 .BodyCard{
+    display: block;
     background-color: rgb(97, 59, 59);
     padding:0.5rem;
 
 }
 
 .StatLine{
-  margin:0.5rem 0.5rem;
+  display: flex;
+  margin:0.2rem 0.2rem;
   padding: 0.5rem;
-  border:olive;
-  border-width: 5px;
-  background-color: rgb(136, 119, 95);
-    
+  background-color: rgb(145, 126, 98);
+}
+.StatType{
+  text-align: middle;
+  width:35%;
+  border:solid rgb(60, 69, 75);
+  background-color: rgb(109, 134, 143);
+}
+
+.StatLineButtons{
+  border: solid green;
+}
+
+.IncrementButton{
+  margin: 0.1rem;
+  width:2rem
+}
+
+.StatLineValue{
+  margin-left: 5%;
+  font-size: x-large;
+  background-color: goldenrod;
+  border: 3px solid peru;
 }
