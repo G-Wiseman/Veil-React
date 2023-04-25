@@ -7,20 +7,40 @@ import "./CharacterCard.css"
 
 export default function CharacterCard({characterID}) {
 
-  const characterName = "Bobby";
-
+  var characterName = "Damaia"
   function StatLine({StatType}){
-
     const [statValue, setStatValue] = useState(() =>{
       // Do an initial Call to the Database 
       return 100;
     })
 
+    const[inputSign, setInputSign] = useState(() => {
+      return {next:"-", scaleValue:1};
+    })
+
     function UserInputOnStatValue (inputValue){
       setStatValue( prevValue => prevValue + inputValue)
-    }
+    };
 
-    const handleInput = (event) => {
+    const handleSignButton = () =>{
+      setInputSign( prevSign => {
+        if (prevSign.scaleValue == -1){
+          return {scaleValue: 1, next: "-"}
+        }
+        else{
+          return {scaleValue: -1, next: "+"}
+        }
+      });
+        
+
+    };
+
+    const handleIncrementButton = (event) => {
+      let value = Number(event.target.value)
+      setStatValue(prevValue => prevValue + (inputSign.scaleValue * value))
+    };
+
+    const handleFormInput = (event) => {
       event.preventDefault();
       let value = Number(event.target.StatLineInputForm.value);
       console.log("log", value, StatType, characterID)
@@ -33,12 +53,12 @@ export default function CharacterCard({characterID}) {
       <span className="StatType">{StatType}</span>
   
       <span className="StatLineButtons"> 
-        <button> - </button>
-        <button className="IncrementButton"> 1</button>
-        <button className="IncrementButton"> 5</button>
+        <button id="SignButton" onClick={handleSignButton}> {inputSign.next} </button>
+        <button value="1" className="IncrementButton" onClick={handleIncrementButton}>1</button>
+        <button value="5" className="IncrementButton" onClick={handleIncrementButton}>5</button>
   
   
-        <form onSubmit={handleInput}>
+        <form onSubmit={handleFormInput}>
           <input className="StatLineInput" id="StatLineInputForm"></input>
           <button type="submit">Submit</button>
         </form>
