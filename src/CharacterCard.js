@@ -24,11 +24,11 @@ export default function CharacterCard({characterID}) {
 
     const handleSignButton = () =>{
       setInputSign( prevSign => {
-        if (prevSign.scaleValue == -1){
-          return {scaleValue: 1, next: "-"}
+        if (prevSign.scaleValue < 0){
+          return {scaleValue: 1, next: "-"};
         }
         else{
-          return {scaleValue: -1, next: "+"}
+          return {scaleValue: -1, next: "+"};
         }
       });
         
@@ -52,11 +52,11 @@ export default function CharacterCard({characterID}) {
     <div className="StatLine">
       <span className="StatType">{StatType}</span>
   
-      <span className="StatLineButtons"> 
-        <button id="SignButton" onClick={handleSignButton}> {inputSign.next} </button>
-        <button value="1" className="IncrementButton" onClick={handleIncrementButton}>1</button>
-        <button value="5" className="IncrementButton" onClick={handleIncrementButton}>5</button>
-  
+      <span className="StatLineInputs"> 
+        
+          <button id="SignButton" onClick={handleSignButton}> {inputSign.next} </button>
+          <button value="1" className="IncrementButton" onClick={handleIncrementButton}>{1 * inputSign.scaleValue}</button>
+          <button value="10" className="IncrementButton" onClick={handleIncrementButton}>{10 * inputSign.scaleValue}</button>
   
         <form onSubmit={handleFormInput}>
           <input className="StatLineInput" id="StatLineInputForm"></input>

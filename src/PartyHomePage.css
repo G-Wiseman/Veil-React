@@ -1,14 +1,13 @@
 .CharacterLineup{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap:1px;
-    row-gap: 3rem;
+    row-gap: 13rem;
 }
 
-@media screen and (max-width:500px){
+/* @media screen and (max-width:500px){
     .CharacterLineup{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 2rem;
     }
-}
+} */
