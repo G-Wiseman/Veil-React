@@ -6,8 +6,9 @@ import "./CharacterCard.css"
 
 
 export default function CharacterCard({characterID}) {
+  var characterName = characterID;
 
-  var characterName = "Damaia"
+
   function StatLine({StatType}){
     const [statValue, setStatValue] = useState(() =>{
       // Do an initial Call to the Database 
