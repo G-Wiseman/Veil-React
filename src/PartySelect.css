@@ -1,0 +1,11 @@
+.PartyCard{
+    background-color: cadetblue;
+    border-width: 1%;
+    border-style: solid;
+    /* max-width: 70%; */
+    margin: 1%;
+}
+
+.PartyCardName{
+    background-color: darkcyan;
+}
